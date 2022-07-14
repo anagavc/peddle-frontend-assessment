@@ -26,17 +26,17 @@ const NavBar = ({ bgColor }) => {
 
   return (
     <div
-      className={`bg-${bgColor} flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
+      className={`bg-[${bgColor}] flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
     >
       <div className="flex justify-between items-center lg:py-3 py-2 z-10 flex-1">
-        <div className="flex justify-center items-center space-x-2 h-full">
+        <div className="flex justify-center items-center  h-full">
           <NavLink to="/">
-            <img src={logoWhite} alt="logo" className="w-4/5 lg:w-full" />
+            <img src={logoWhite} alt="logo" className="w-3/5 lg:w-full" />
           </NavLink>
         </div>
 
         <div
-          className="text-3xl text-pry-50 absolute right-4 lg:hidden  top-2 cursor-pointer transition duration-300 "
+          className="text-3xl text-white absolute right-4 lg:hidden top-2 transition duration-300 "
           onClick={() => setOpen(!open)}
         >
           {open ? <Close /> : <Menu />}
@@ -56,12 +56,11 @@ const NavBar = ({ bgColor }) => {
           path="/Contact Us"
           textColor="white"
           py="4"
-          bgColor="pry-50"
         />
       </div>
       {/* mobile navigation  begins*/}
       <div
-        className={`lg:hidden flex flex-col border-b-4 border-b-sec -z-10 translate-y-0 justify-between space-y-4 divide pt-12 pb-16 mt-16 items-center px-12 absolute bg-[#7F1E7B] left-0 w-full transition-all duration-500 ease-in ${
+        className={`lg:hidden flex flex-col border-y-4 border-y-purple -z-10 translate-y-0 justify-between space-y-4 divide pt-12 pb-16  items-center px-12 absolute bg-[#1f0041] left-0 w-full transition-all duration-500 ease-in ${
           open ? `translate-y-0` : `-translate-y-full`
         }`}
       >
@@ -80,7 +79,8 @@ const NavBar = ({ bgColor }) => {
         <PrimaryButton
           name="Contact Us"
           path="/contact"
-          bgColor="pry-50"
+          textColor="white"
+          py="4"
           width="2/5"
           click={handleClose}
         />

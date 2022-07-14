@@ -1,7 +1,25 @@
 import { NavLink } from "react-router-dom";
 
-export const PrimaryButton = ({ path, name, click, bgColor, py, position }) => {
-  const buttonStyle = `text-base ${position} bg-${bgColor} py-${py}   text-white uppercase hover:text-white hover:bg-[#7F1E7B] rounded-full flex justify-center w-full items-center  px-8 font-heading transition duration-300`;
+export const FooterButton = ({ icon, link }) => {
+  return (
+    <NavLink
+      to={link}
+      className="text-[#707070] hover:text-white transition duration-300"
+    >
+      {icon}
+    </NavLink>
+  );
+};
+export const PrimaryButton = ({
+  path,
+  name,
+  click,
+  bgColor,
+  py,
+  position,
+  textColor,
+}) => {
+  const buttonStyle = `text-base ${position} bg-pry-50 py-${py}   text-${textColor} uppercase hover:text-white hover:bg-[#7F1E7B] rounded-full flex justify-center w-full items-center   font-heading transition duration-300`;
   return (
     <>
       {path ? (
