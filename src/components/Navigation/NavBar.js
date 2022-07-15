@@ -4,7 +4,7 @@ import { Close, Menu } from "@mui/icons-material";
 import NavItem from "./NavItem";
 import { PrimaryButton } from "../UI/Buttons";
 import { NavLink } from "react-router-dom";
-const NavBar = ({ bgColor }) => {
+const NavBar = ({ bgColor, showContact, setShowContact }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(!open);
@@ -53,14 +53,16 @@ const NavBar = ({ bgColor }) => {
         ))}
         <PrimaryButton
           name="Contact Us"
-          path="/Contact Us"
           textColor="white"
           py="4"
+          click={() => {
+            setShowContact(!showContact);
+          }}
         />
       </div>
       {/* mobile navigation  begins*/}
       <div
-        className={`lg:hidden flex flex-col border-y-4 border-y-purple -z-10 translate-y-0 justify-between space-y-4 divide pt-12 pb-16  items-center px-12 absolute bg-[#1f0041] left-0 w-full transition-all duration-500 ease-in ${
+        className={`lg:hidden flex tr flex-col border-y-4 border-y-purple -z-10 translate-y-0 justify-between space-y-4 divide pt-12 pb-16  items-center px-12 absolute bg-[#1f0041] left-0 w-full transition-all duration-500 ease-in ${
           open ? `translate-y-0` : `-translate-y-full`
         }`}
       >

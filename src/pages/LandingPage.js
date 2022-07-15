@@ -10,6 +10,9 @@ import {
   Twitter,
   YouTube,
 } from "@mui/icons-material";
+
+import { useState } from "react";
+import ContactPopOver from "./Contact";
 const countDown = [
   {
     number: 7,
@@ -29,13 +32,31 @@ const countDown = [
   },
 ];
 const LandingPage = () => {
+  const [showContact, setShowContact] = useState(true);
   return (
     <div className="bg-bgImage bg-cover flex px-8 lg:px-12 flex-col justify-center items-center  w-full">
-      <navbar>
-        <NavBar bgColor="#1f0041" />
+      <navbar className="flex justify-between">
+        <NavBar
+          bgColor="#1f0041"
+          showContact={showContact}
+          setShowContact={setShowContact}
+        />
       </navbar>
-
+      {showContact && (
+        <ContactPopOver
+          showContact={showContact}
+          setShowContact={setShowContact}
+        />
+      )}
       <main className="flex flex-col justify-between h-full space-y-6 py-20 lg:py-36 relative">
+        {/* <PrimaryButton
+          name="Contact Us"
+          textColor="white"
+          py="4"
+          click={() => {
+            setShowContact(!showContact);
+          }}
+        /> */}
         <div className="hidden lg:block bg-gradient-to-t from-[#19073B] to-[#7F1E7B] h-24 w-24 rounded-full py-12 absolute top-36 -left-32"></div>
         <div className="flex flex-col justify-center items-center w-full lg:px-20 space-y-6">
           <h1 className="font-heading text-xl lg:text-5xl text-white uppercase font-semibold text-center leading-loose">
@@ -52,7 +73,11 @@ const LandingPage = () => {
           <div className="hidden lg:block h-20 w-20 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-2/4 -right-32"></div>
           <div className="flex  justify-around lg:justify-between lg:space-x-2 flex-wrap lg:px-12 gap-8">
             {countDown.map((count) => (
-              <CountDownBox number={count.number} text={count.text} />
+              <CountDownBox
+                number={count.number}
+                text={count.text}
+                key={count.text}
+              />
             ))}
           </div>
           <form
@@ -68,7 +93,7 @@ const LandingPage = () => {
             <div className="w-full relative flex lg:flex-row flex-col lg:space-x-12 gap-4">
               <input
                 placeholder="Enter your email address"
-                className="bg-white w-full pt placeholder:text-black rounded-full text-black border-b border-b-black py-4 px-8 lg:pr-48 font-heading text-base  focus:outline-none  focus:border-black transition focus:ring-[#707070] focus:ring-1 duration-300"
+                className="bg-white w-full pt placeholder:text-purple rounded-full text-purple  py-4 px-8 lg:pr-48 font-heading text-base  focus:outline-none  focus:border-purple transition focus:ring-purple focus:ring-1 duration-300"
               />
               <PrimaryButton
                 bgColor="pry-50"
