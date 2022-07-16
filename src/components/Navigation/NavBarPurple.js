@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import logoWhite from "../../images/logoWhite.png";
 import logoPurple from "../../images/logoPurple.png";
 import { Close, Menu } from "@mui/icons-material";
-import NavItem from "./NavItem";
 import { PrimaryButton } from "../UI/Buttons";
 import { NavLink } from "react-router-dom";
 const NavBarPurple = ({ showContact, setShowContact }) => {

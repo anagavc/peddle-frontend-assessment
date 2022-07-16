@@ -1,4 +1,3 @@
-import NavBar from "../components/Navigation/NavBar";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import ContactPopOver from "./Contact";
