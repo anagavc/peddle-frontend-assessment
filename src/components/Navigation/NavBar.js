@@ -26,7 +26,7 @@ const NavBar = ({ bgColor, showContact, setShowContact }) => {
 
   return (
     <div
-      className={`bg-[${bgColor}] flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
+      className={`bg-[${bgColor} backdrop-filter backdrop-blur-xl    bg-opacity-20  flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
     >
       <div className="flex justify-between items-center lg:py-3 py-2 z-10 flex-1">
         <div className="flex justify-center items-center  h-full">

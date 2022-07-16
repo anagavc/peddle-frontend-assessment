@@ -2,7 +2,6 @@ import { FooterButton, PrimaryButton } from "../components/UI/Buttons";
 import NavBar from "../components/Navigation/NavBar";
 import CountDownBox from "../components/UI/CountDownBox";
 import Input from "../components/UI/Input";
-import { NavLink } from "react-router-dom";
 import {
   Facebook,
   Instagram,
@@ -10,7 +9,6 @@ import {
   Twitter,
   YouTube,
 } from "@mui/icons-material";
-
 import { useState } from "react";
 import ContactPopOver from "./Contact";
 const countDown = [
@@ -32,7 +30,7 @@ const countDown = [
   },
 ];
 const LandingPage = () => {
-  const [showContact, setShowContact] = useState(true);
+  const [showContact, setShowContact] = useState(false);
   return (
     <div className="bg-bgImage bg-cover flex px-8 lg:px-12 flex-col justify-center items-center  w-full">
       <navbar className="flex justify-between">
@@ -49,14 +47,6 @@ const LandingPage = () => {
         />
       )}
       <main className="flex flex-col justify-between h-full space-y-6 py-20 lg:py-36 relative">
-        {/* <PrimaryButton
-          name="Contact Us"
-          textColor="white"
-          py="4"
-          click={() => {
-            setShowContact(!showContact);
-          }}
-        /> */}
         <div className="hidden lg:block bg-gradient-to-t from-[#19073B] to-[#7F1E7B] h-24 w-24 rounded-full py-12 absolute top-36 -left-32"></div>
         <div className="flex flex-col justify-center items-center w-full lg:px-20 space-y-6">
           <h1 className="font-heading text-xl lg:text-5xl text-white uppercase font-semibold text-center leading-loose">

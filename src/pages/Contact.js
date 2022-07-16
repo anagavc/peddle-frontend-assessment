@@ -33,7 +33,12 @@ const Contact = ({ showContact, setShowContact }) => {
           setShowContact={setShowContact}
         />
       </navbar>
-      <div className="hidden lg:block h-full py-96 backdrop-filter backdrop-blur-xl bg-opacity-60  bg-purple w-2/4 z-20"></div>
+      <div
+        className="hidden lg:block h-full py-96 backdrop-filter backdrop-blur-xl bg-opacity-60  bg-purple w-2/4 z-20"
+        onClick={() => {
+          setShowContact(!showContact);
+        }}
+      ></div>
 
       <div className="bg-bgImage bg-cover  w-full lg:w-2/4 relative h-full py-12">
         <div
@@ -45,7 +50,7 @@ const Contact = ({ showContact, setShowContact }) => {
         >
           <ArrowForward />
         </div>
-        <div className="hidden lg:block h-40 w-40 rounded-full z-10 bg-gradient-to-t  from-[#19073B] to-[#213F72]  py-8 absolute top-24 right-12"></div>
+        <div className="hidden lg:block h-40 w-40 rounded-full z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  bg-[#1f0041] py-8 absolute top-24 right-12"></div>
 
         <form
           onSubmit={(e) => {
