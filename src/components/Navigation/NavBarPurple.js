@@ -5,7 +5,7 @@ import { Close, Menu } from "@mui/icons-material";
 import NavItem from "./NavItem";
 import { PrimaryButton } from "../UI/Buttons";
 import { NavLink } from "react-router-dom";
-const NavBar = ({ bgColor, showContact, setShowContact }) => {
+const NavBarPurple = ({ showContact, setShowContact }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(!open);
@@ -27,22 +27,18 @@ const NavBar = ({ bgColor, showContact, setShowContact }) => {
 
   return (
     <div
-      className={`bg-[${bgColor} backdrop-filter
-     backdrop-blur-xl  bg-opacity-20  flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
+      className={`backdrop-filter
+     backdrop-blur-xl  bg-opacity-60  flex justify-between w-full fixed top-0 left-0 px-12 z-50`}
     >
       <div className="flex justify-between items-center lg:py-3 py-2 z-10 flex-1">
         <div className="flex justify-center items-center  h-full">
           <NavLink to="/">
-            {bgColor === "white" ? (
-              <img src={logoPurple} alt="logo" className="w-3/5 lg:w-full" />
-            ) : (
-              <img src={logoWhite} alt="logo" className="w-3/5 lg:w-full" />
-            )}
+            <img src={logoPurple} alt="logo" className="w-3/5 lg:w-full" />
           </NavLink>
         </div>
 
         <div
-          className="text-3xl text-white absolute right-4 lg:hidden top-2 transition duration-300 "
+          className="text-3xl text-purple absolute right-4 lg:hidden top-2 transition duration-300 "
           onClick={() => setOpen(!open)}
         >
           {open ? <Close /> : <Menu />}
@@ -50,17 +46,13 @@ const NavBar = ({ bgColor, showContact, setShowContact }) => {
       </div>
       <div className="lg:flex  items-center  hidden w-3/5">
         {navItems.map((link) => (
-          <NavItem
-            name={link.name}
-            color={
-              bgColor === "white"
-                ? "pry-200 hover:text-[#FF00F7]"
-                : "white hover:text-[#7F1E7B]"
-            }
-            path={link.path}
-            id={link.name + "desktop"}
+          <NavLink
+            to={link.path}
             key={link.name + "desktop"}
-          />
+            className={`md:mr-0 text-base uppercase  flex justify-center  md:border-0 w-full items-center py-2 font-heading  text-pry-200 hover:text-[#FF00F7]  border-b border-b-white md:border-b-none transition duration-500`}
+          >
+            {link.name}
+          </NavLink>
         ))}
         <PrimaryButton
           name="Contact Us"
@@ -79,18 +71,14 @@ const NavBar = ({ bgColor, showContact, setShowContact }) => {
       >
         {navItems.map((link) => {
           return (
-            <NavItem
-              name={link.name}
+            <NavLink
+              to={link.path}
               key={link.name + "mobile"}
-              color={
-                bgColor === "white"
-                  ? "[#1E232C] text-white hover:text-[#FF00F7]"
-                  : "white hover:text-[#7F1E7B]"
-              }
-              path={link.path}
-              id={link.name}
-              click={handleClose}
-            />
+              onClick={handleClose}
+              className={`md:mr-0 text-base uppercase  flex justify-center  md:border-0 w-full items-center py-2 font-heading  text-white  border-b border-b-white md:border-b-none transition duration-500`}
+            >
+              {link.name}
+            </NavLink>
           );
         })}
 
@@ -108,4 +96,4 @@ const NavBar = ({ bgColor, showContact, setShowContact }) => {
   );
 };
 
-export default NavBar;
+export default NavBarPurple;

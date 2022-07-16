@@ -4,7 +4,7 @@ export const FooterButton = ({ icon, link }) => {
   return (
     <NavLink
       to={link}
-      className="text-[#707070] hover:text-white transition duration-300"
+      className="text-[#707070] hover:text-[#213F72] transition duration-300"
     >
       {icon}
     </NavLink>

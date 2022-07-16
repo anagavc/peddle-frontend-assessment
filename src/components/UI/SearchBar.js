@@ -2,10 +2,10 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <label className="relative block w-4/5 text-pry-200">
+    <label className="relative block w-full text-pry-200">
       <input
         type="text"
-        className="border border-purple py-3 px-6 rounded-2xl placeholder:text-pry-200  w-full shadow-sm focus:outline-none focus:border-pry-200 focus:ring-pry-200 focus:ring-1 sm:text-sm"
+        className="border border-black py-4 px-6 rounded-full placeholder:text-black font-heading text-base w-full shadow-sm focus:outline-none focus:border-pry-200 focus:ring-pry-200 focus:ring-1 sm:text-sm transition duration-300"
         placeholder="Search here"
       />
       <span className="sr-only">Search</span>
