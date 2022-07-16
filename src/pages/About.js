@@ -1,22 +1,15 @@
 import NavBar from "../components/Navigation/NavBar";
 import { NavLink } from "react-router-dom";
-import { FooterButton } from "../components/UI/Buttons";
 import { useState } from "react";
 import ContactPopOver from "./Contact";
 import dots from "../images/dots.png";
 import { ArrowForward } from "@mui/icons-material";
-import {
-  Facebook,
-  Instagram,
-  LinkedIn,
-  Twitter,
-  YouTube,
-} from "@mui/icons-material";
+import Footer from "../components/Layout/Footer";
 const About = () => {
   const [showContact, setShowContact] = useState(false);
 
   return (
-    <div className="bg-bgImage bg-cover flex px-6 lg:px-0 flex-col py-12 w-full space-y-16 lg:space-y-20">
+    <div className="bg-bgImage bg-cover flex px-6 lg:px-0 flex-col py-12 w-full space-y-16 lg:space-y-16">
       <navbar className="flex justify-between">
         <NavBar
           bgColor="#1f0041"
@@ -57,11 +50,11 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="w-full lg:px-48">
-        <h3 className="text-2xl lg:text-5xl font-heading  text-white w-full leading-loose  lg:tracking-wide text-justify">
+      <div className="w-full lg:px-48 ">
+        <h4 className="text-2xl lg:text-5xl font-heading lg:my-24  text-white w-full leading-loose  lg:tracking-wide text-justify">
           Metricks was developed because just like you, we needed a product that
           could give us <span className="font-bold">good value.</span>
-        </h3>
+        </h4>
       </div>
       <div className="flex flex-col lg:flex-row justify-between items-stretch w-full relative">
         <div className="flex flex-col justify-center items-center lg:px-24 py-8 w-full lg:w-2/4 space-y-12 h-full ">
@@ -139,23 +132,7 @@ const About = () => {
           </NavLink>
         </div>
       </div>
-      <div className="w-full justify-center flex flex-col space-y-4 h-full ">
-        <div className="flex justify-center   items-start space-x-8 text-white">
-          <FooterButton link="https://www.facebook.com" icon={<Facebook />} />
-          <FooterButton link="https://www.youtube.com" icon={<YouTube />} />
-          <FooterButton link="https://www.linkedin.com" icon={<LinkedIn />} />
-          <FooterButton link="https://www.instagram.com" icon={<Instagram />} />
-          <FooterButton link="https://www.twitter.com" icon={<Twitter />} />
-        </div>
-        <div className="flex space-x-8 justify-center items-center">
-          <FooterButton link="/terms" icon="Terms of service" />
-          <FooterButton link="/privacy" icon="Privacy policy" />
-        </div>
-        <p className="text-[#707070] text-base font-heading text-center">
-          {" "}
-          Copyright 2021 &copy; Peddle Technologies. All Rights Reserved
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { LandingPage, Contact, About } from "./pages";
+import { LandingPage, Contact, About, Terms } from "./pages";
 function App() {
   return (
     <>
@@ -7,6 +7,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </>
   );
