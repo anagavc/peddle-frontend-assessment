@@ -5,10 +5,11 @@ module.exports = {
     extend: {
       colors: {
         purple: "#1f0041",
+
         pry: {
           50: "#271AC1",
           100: "#01595A",
-          200: "#038B73",
+          200: "#7F1E7B",
         },
       },
 
