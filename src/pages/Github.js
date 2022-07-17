@@ -12,27 +12,27 @@ const Github = () => {
   const [page, setPage] = useState(2);
   useEffect(() => {
     const getRepos = async () => {
-      const res = await fetch(
-        `https://api.github.com/search/repositories?q=created:>2022-06-16&sort=stars&order=desc&page=1`
+      const res = await axios.get(
+        `https://api.github.com/search/repositories?q=created:>2022-06-16&sort=stars&order=desc&page=1&per_page=20`
       );
-      const data = await res.json();
+      const data = await res.data.items;
       setRepos(data);
     };
     getRepos();
   }, []);
   const fetchRepos = async () => {
-    const res = await fetch(
-      `https://api.github.com/search/repositories?q=created:>2022-06-16&sort=stars&order=desc&page=${page}`
+    const res = await axios.get(
+      `https://api.github.com/search/repositories?q=created:>2022-06-16&sort=stars&order=desc&page=${page}&per_page=20`
     );
-    const data = await res.json();
+    const data = await res.data.items;
     return data;
   };
 
   const fetchData = async () => {
     const reposFromServer = await fetchRepos();
     console.log(reposFromServer);
-    setRepos(reposFromServer);
-    if (reposFromServer.length === 0 || reposFromServer.length < 10) {
+    setRepos([...repos, ...reposFromServer]);
+    if (page === 5) {
       setHasMore(false);
     }
     setPage(page + 1);
@@ -88,12 +88,12 @@ const Github = () => {
             loader={<Loading />}
             className="space-y-6"
             endMessage={
-              <p style={{ textAlign: "center" }}>
-                <b>Yay! You have seen it all</b>
-              </p>
+              <h3 className="text-white font-bold text-3xl text-center bg-pry-200 p-6 rounded">
+                <b>Yay! That is all the top repos for now.</b>
+              </h3>
             }
           >
-            {repos.items?.map((item) => (
+            {repos.map((item) => (
               <RepositoryItem item={item} key={item.id} />
             ))}
           </InfiniteScroll>
