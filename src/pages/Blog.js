@@ -1,64 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import ContactPopOver from "./Contact";
-import blogImage from "../images/blog.jpg";
+import { newsItem } from "../utilities/newsItem";
 import Footer from "../components/Layout/Footer";
 import { PrimaryButton } from "../components/UI/Buttons";
 import { ArrowForward } from "@mui/icons-material";
-
 import SearchBar from "../components/UI/SearchBar";
 import NavBarPurple from "../components/Navigation/NavBarPurple";
+import {
+  FadeUpAnimation,
+  FadeDownAnimation,
+} from "../components/UI/Animations";
 const Blog = () => {
-  const newsItem = [
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-    {
-      image: blogImage,
-      date: "July 16, 2022. featured article. affiliate",
-      title: "12 Popup Use Cases To Increase Conversions",
-
-      content:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
-    },
-  ];
   const [showContact, setShowContact] = useState(false);
 
   return (
@@ -91,7 +44,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-between px-8 gap-8 lg:px-24 w-full ">
+      <FadeUpAnimation className="flex flex-col lg:flex-row items-center justify-between px-8 gap-8 lg:px-24 w-full ">
         <div className="flex flex-col w-full lg:w-2/5">
           <h5 className="text-purple font-heading text-2xl font-medium">
             Latest From The Blog
@@ -105,8 +58,8 @@ const Blog = () => {
         <div className="w-full lg:w-2/6">
           <SearchBar />
         </div>
-      </div>
-      <div className="flex justify-around lg:justify-between gap-8 px-8 lg:px-24 h-full flex-wrap w-full">
+      </FadeUpAnimation>
+      <FadeUpAnimation className="flex justify-around lg:justify-between gap-8 px-8 lg:px-24 h-full flex-wrap w-full">
         {newsItem.map((item, index) => (
           <div
             className="flex flex-col p-6 bg-white w-96 drop-shadow rounded space-y-4"
@@ -133,8 +86,8 @@ const Blog = () => {
             </NavLink>
           </div>
         ))}
-      </div>
-      <div className="flex flex-col w-full px-8 lg:px-24 space-y-8">
+      </FadeUpAnimation>
+      <FadeUpAnimation className="flex flex-col w-full px-8 lg:px-24 space-y-8">
         <div className="flex flex-col w-full lg:w-2/5">
           <h5 className="text-purple font-heading text-2xl font-medium">
             Recent Articles
@@ -170,12 +123,12 @@ const Blog = () => {
             </div>
           ))}
         </div>
-      </div>
+      </FadeUpAnimation>
       <div className="w-4/5 lg:w-2/5 flex items-center justify-center">
         <PrimaryButton name="Load more" textColor="white" py="4 " />
       </div>
-      <div className="w-full relative bg-gradient-to-t from-[#19073B] to-[#213F72] ">
-        <div className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-20 lg:right-48 z-10"></div>
+      <FadeUpAnimation className="w-full relative bg-gradient-to-t from-[#19073B] to-[#213F72] ">
+        <FadeDownAnimation className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-20 lg:right-48 z-10"></FadeDownAnimation>
         <div className="flex flex-col justify-around space-y-8  h-full px-8 lg:px-24 py-12 lg:py-24 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full z-20 relative">
           <h6 className="text-white text-2xl font-heading">
             Want to know more about Metrics ?
@@ -200,7 +153,7 @@ const Blog = () => {
             <ArrowForward />
           </NavLink>
         </div>
-      </div>
+      </FadeUpAnimation>
       <Footer />
     </div>
   );

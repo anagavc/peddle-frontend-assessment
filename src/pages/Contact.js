@@ -3,6 +3,7 @@ import { FormInput } from "../components/UI/Input";
 import { PrimaryButton } from "../components/UI/Buttons";
 import { ArrowForward } from "@mui/icons-material";
 import NavBar from "../components/Navigation/NavBar";
+import { FadeDownAnimation } from "../components/UI/Animations";
 const Contact = ({ showContact, setShowContact }) => {
   const inputItems = [
     {
@@ -25,7 +26,7 @@ const Contact = ({ showContact, setShowContact }) => {
     },
   ];
   return (
-    <div className="flex h-screen justify-between lg:fixed z-50 w-full lg:top-0   transition duration-300 overflow-y-hidden">
+    <FadeDownAnimation className="flex h-screen justify-between lg:fixed z-50 w-full lg:top-0   transition duration-300 overflow-y-hidden">
       <navbar className="flex  lg:hidden">
         <NavBar
           bgColor="#1f0041"
@@ -87,7 +88,7 @@ const Contact = ({ showContact, setShowContact }) => {
           />
         </form>
       </div>
-    </div>
+    </FadeDownAnimation>
   );
 };
 

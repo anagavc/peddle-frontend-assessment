@@ -33,7 +33,7 @@ const Clock = () => {
 
   useEffect(() => {
     startTimer();
-  }, []);
+  });
   console.log(timerDays);
   return (
     <div className="flex  justify-around lg:justify-between lg:space-x-2 flex-wrap lg:px-12 gap-8">

@@ -5,6 +5,11 @@ import ContactPopOver from "./Contact";
 import dots from "../images/dots.png";
 import { ArrowForward } from "@mui/icons-material";
 import Footer from "../components/Layout/Footer";
+import {
+  FadeDownAnimation,
+  FadeRightAnimation,
+  FadeUpAnimation,
+} from "../components/UI/Animations";
 const About = () => {
   const [showContact, setShowContact] = useState(false);
 
@@ -23,8 +28,8 @@ const About = () => {
           setShowContact={setShowContact}
         />
       )}
-      <div className="flex flex-col lg:flex-row lg:justify-between  w-full h-full relative">
-        <div className="hidden lg:block h-3/5 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-32 left-80 z-10 "></div>
+      <FadeUpAnimation className="flex flex-col lg:flex-row lg:justify-between  w-full h-full relative">
+        <FadeRightAnimation className="hidden lg:block h-3/5 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-32 left-80 z-10 "></FadeRightAnimation>
 
         <div className="flex flex-col justify-center lg:justify-around space-y-12 items-center h-full px-12 py-16 lg:py-48 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full lg:w-2/4 z-20">
           <div className="flex  space-x-2 lg:px-4 w-full items-center justify-center">
@@ -41,7 +46,7 @@ const About = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center px-4 lg:px-24 w-full py-12 lg:w-2/4 lg:py-24h-full relative ">
-          <div className=" h-40 w-40 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72] lg:py-4 py-8 absolute -top-96 lg:top-32 right-12"></div>
+          <FadeDownAnimation className=" h-40 w-40 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72] lg:py-4 py-8 absolute -top-96 lg:top-32 right-12"></FadeDownAnimation>
 
           <p className="text-base  text-white font-heading  lg:mt-96 text-justify">
             Our tools are easy to set up and use with a user friendly dashboard
@@ -49,14 +54,14 @@ const About = () => {
             multi-affiliate campaigns in 5 minutes.
           </p>
         </div>
-      </div>
-      <div className="w-full lg:px-48 ">
+      </FadeUpAnimation>
+      <FadeUpAnimation className="w-full lg:px-48 ">
         <h4 className="text-2xl lg:text-5xl font-heading lg:my-24  text-white w-full leading-loose  lg:tracking-wide text-justify">
           Metricks was developed because just like you, we needed a product that
           could give us <span className="font-bold">good value.</span>
         </h4>
-      </div>
-      <div className="flex flex-col lg:flex-row justify-between items-stretch w-full relative">
+      </FadeUpAnimation>
+      <FadeUpAnimation className="flex flex-col lg:flex-row justify-between items-stretch w-full relative">
         <div className="flex flex-col justify-center items-center lg:px-24 py-8 w-full lg:w-2/4 space-y-12 h-full ">
           <div className="flex  space-x-2  w-full items-center ">
             <p className="text-base uppercase text-white font-heading border-b border-b-white w-20 flex justify-center items-center">
@@ -78,7 +83,7 @@ const About = () => {
             <img src={dots} alt="dotted patterns" className="" />
           </div>
         </div>
-        <div className="block h-40 lg:h-3/5 w-80 bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-96 lg:top-32 lg:right-80 z-10"></div>
+        <FadeUpAnimation className="block h-40 lg:h-3/5 w-80 bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-96 lg:top-32 lg:right-80 z-10"></FadeUpAnimation>
 
         <div className="flex flex-col justify-around space-y-12  h-full px-4 lg:px-24 py-24 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full lg:w-2/4 z-20">
           <div className="flex  space-x-2  w-full items-center ">
@@ -105,9 +110,9 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="w-full relative">
-        <div className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute lg:top-20 top-40 lg:right-48 z-10"></div>
+      </FadeUpAnimation>
+      <FadeUpAnimation className="w-full relative">
+        <FadeDownAnimation className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute lg:top-20 top-40 lg:right-48 z-10"></FadeDownAnimation>
         <div className="flex flex-col justify-around space-y-8  h-full px-8 lg:px-24 py-12 lg:py-24 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full z-20 relative">
           <h6 className="text-white text-2xl font-heading">Got a Question?</h6>
           <p className="text-base  text-white font-heading text-justify">
@@ -131,7 +136,7 @@ const About = () => {
             <ArrowForward />
           </NavLink>
         </div>
-      </div>
+      </FadeUpAnimation>
       <Footer />
     </div>
   );

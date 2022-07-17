@@ -1,4 +1,9 @@
 import { FooterButton, PrimaryButton } from "../components/UI/Buttons";
+import {
+  FadeRightAnimation,
+  FadeLeftAnimation,
+  FadeUpAnimation,
+} from "../components/UI/Animations";
 import NavBar from "../components/Navigation/NavBar";
 import Input from "../components/UI/Input";
 import {
@@ -29,8 +34,8 @@ const LandingPage = () => {
         />
       )}
       <main className="flex flex-col justify-between h-full space-y-6 py-20 lg:py-36 relative">
-        <div className="hidden lg:block bg-gradient-to-t from-[#19073B] to-[#7F1E7B] h-24 w-24 rounded-full py-12 absolute top-36 -left-32"></div>
-        <div className="flex flex-col justify-center items-center w-full lg:px-20 space-y-6">
+        <FadeRightAnimation className="hidden lg:block bg-gradient-to-t from-[#19073B] to-[#7F1E7B] h-24 w-24 rounded-full py-12 absolute top-36 -left-32"></FadeRightAnimation>
+        <FadeUpAnimation className="flex flex-col justify-center items-center w-full lg:px-20 space-y-6">
           <h1 className="font-heading text-xl lg:text-5xl text-white uppercase font-semibold text-center leading-loose">
             something awesome is <span className="block lead">coming soon</span>
           </h1>
@@ -42,7 +47,7 @@ const LandingPage = () => {
               <span className="font-bold">optimize</span> your campaigns.
             </span>
           </p>
-          <div className="hidden lg:block h-20 w-20 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-2/4 -right-32"></div>
+          <FadeLeftAnimation className="hidden lg:block h-20 w-20 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-2/4 -right-32"></FadeLeftAnimation>
           <Clock />
           <form
             onSubmit={(e) => {
@@ -74,10 +79,10 @@ const LandingPage = () => {
               />
             </div>
           </form>
-        </div>
+        </FadeUpAnimation>
       </main>
       <div className="relative flex justify-center items-center max-h-2/5 w-full">
-        <div className="hidden lg:block h-44 w-44 rounded-full bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-28 left-72"></div>
+        <FadeUpAnimation className="hidden lg:block h-44 w-44 rounded-full bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-28 left-72"></FadeUpAnimation>
         <footer className="flex flex-col pt-24 lg:pt-96  px-4 space-y-12 rounded-t-full bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  bg-[#1f0041] w-full lg:w-3/5 justify-start  border border-[#707070] mt-16">
           <div className="flex justify-center lg:-mt-64  items-start space-x-8 text-white">
             <FooterButton link="https://www.facebook.com" icon={<Facebook />} />

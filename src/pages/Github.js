@@ -4,6 +4,10 @@ import NavBar from "../components/Navigation/NavBar";
 import ContactPopOver from "./Contact";
 import { Footer, RepositoryItem, Loading } from "../components/Layout";
 import { useEffect, useState } from "react";
+import {
+  FadeDownAnimation,
+  FadeUpAnimation,
+} from "../components/UI/Animations";
 const Github = () => {
   const [showContact, setShowContact] = useState(false);
   const [repos, setRepos] = useState([]);
@@ -51,8 +55,8 @@ const Github = () => {
             setShowContact={setShowContact}
           />
         )}
-        <div className="flex flex-col lg:flex-row lg:justify-between  w-full h-full relative">
-          <div className="hidden lg:block h-3/5 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-32 left-80 z-10 "></div>
+        <FadeUpAnimation className="flex flex-col lg:flex-row lg:justify-between  w-full h-full relative">
+          <FadeDownAnimation className="hidden lg:block h-3/5 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-32 left-80 z-10 "></FadeDownAnimation>
 
           <div className="flex flex-col justify-center lg:justify-around space-y-12 items-center h-full px-12 py-16 lg:py-48 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full lg:w-2/4 z-20">
             <div className="flex  space-x-2 lg:px-4 w-full items-center justify-center">
@@ -69,21 +73,21 @@ const Github = () => {
           </div>
 
           <div className="flex flex-col justify-center items-center px-4 lg:px-24 w-full py-12 lg:w-2/4 lg:py-24h-full relative ">
-            <div className=" h-40 w-40 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72] lg:py-4 py-8 absolute -top-96 lg:top-32 right-12"></div>
+            <FadeUpAnimation className=" h-40 w-40 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72] lg:py-4 py-8 absolute -top-96 lg:top-32 right-12"></FadeUpAnimation>
 
             <p className="text-base  text-white font-heading  lg:mt-96 text-justify">
               This is a list of the most starred GitHub repositories from the
               last thirty days.
             </p>
           </div>
-        </div>
-        <div className="flex flex-col w-full space-y-6  lg:px-24 justify-between h-full">
+        </FadeUpAnimation>
+        <FadeUpAnimation className="flex flex-col w-full space-y-6  lg:px-24 justify-between h-full">
           <InfiniteScroll
             dataLength={repos.length}
             next={fetchData}
             hasMore={hasMore}
             loader={<Loading />}
-            className="space-y-6"
+            className="space-y-6 w-full"
             endMessage={
               <h3 className="text-white font-bold text-xl lg:text-3xl text-center bg-pry-200 p-6 rounded">
                 <b>Yay! That is all the top repos for now.</b>
@@ -94,7 +98,7 @@ const Github = () => {
               <RepositoryItem item={item} key={item.id} />
             ))}
           </InfiniteScroll>
-        </div>
+        </FadeUpAnimation>
         <Footer />
       </div>
     </>
