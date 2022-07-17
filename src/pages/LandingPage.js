@@ -1,6 +1,6 @@
 import { FooterButton, PrimaryButton } from "../components/UI/Buttons";
 import NavBar from "../components/Navigation/NavBar";
-import CountDownBox from "../components/UI/CountDownBox";
+import CountDownBox from "../components/Layout/CountDownBox";
 import Input from "../components/UI/Input";
 import {
   Facebook,
