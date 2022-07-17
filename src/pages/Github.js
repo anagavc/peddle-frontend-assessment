@@ -6,7 +6,6 @@ import { Footer, RepositoryItem, Loading } from "../components/Layout";
 import { useEffect, useState } from "react";
 const Github = () => {
   const [showContact, setShowContact] = useState(false);
-  const [isFetching, setIsFetching] = useState(false);
   const [repos, setRepos] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(2);
@@ -30,13 +29,11 @@ const Github = () => {
 
   const fetchData = async () => {
     const reposFromServer = await fetchRepos();
-    console.log(reposFromServer);
     setRepos([...repos, ...reposFromServer]);
     if (page === 5) {
       setHasMore(false);
     }
     setPage(page + 1);
-    console.log(page);
   };
   return (
     <>
@@ -88,7 +85,7 @@ const Github = () => {
             loader={<Loading />}
             className="space-y-6"
             endMessage={
-              <h3 className="text-white font-bold text-3xl text-center bg-pry-200 p-6 rounded">
+              <h3 className="text-white font-bold text-xl lg:text-3xl text-center bg-pry-200 p-6 rounded">
                 <b>Yay! That is all the top repos for now.</b>
               </h3>
             }

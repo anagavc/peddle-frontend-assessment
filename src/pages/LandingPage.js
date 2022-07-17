@@ -1,6 +1,5 @@
 import { FooterButton, PrimaryButton } from "../components/UI/Buttons";
 import NavBar from "../components/Navigation/NavBar";
-import CountDownBox from "../components/Layout/CountDownBox";
 import Input from "../components/UI/Input";
 import {
   Facebook,
@@ -11,24 +10,7 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import ContactPopOver from "./Contact";
-const countDown = [
-  {
-    number: 7,
-    text: "Days",
-  },
-  {
-    number: 24,
-    text: "Hours",
-  },
-  {
-    number: 54,
-    text: "Minutes",
-  },
-  {
-    number: 11,
-    text: "Seconds",
-  },
-];
+import { Clock } from "../components/Layout";
 const LandingPage = () => {
   const [showContact, setShowContact] = useState(false);
   return (
@@ -61,15 +43,7 @@ const LandingPage = () => {
             </span>
           </p>
           <div className="hidden lg:block h-20 w-20 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-2/4 -right-32"></div>
-          <div className="flex  justify-around lg:justify-between lg:space-x-2 flex-wrap lg:px-12 gap-8">
-            {countDown.map((count) => (
-              <CountDownBox
-                number={count.number}
-                text={count.text}
-                key={count.text}
-              />
-            ))}
-          </div>
+          <Clock />
           <form
             onSubmit={(e) => {
               e.preventDefault();
