@@ -1,28 +1,46 @@
 import ReactDom from "react-dom";
+import { useForm } from "react-hook-form";
 import { FormInput } from "../components/UI/Input";
 import { PrimaryButton } from "../components/UI/Buttons";
 import { ArrowForward } from "@mui/icons-material";
 import NavBar from "../components/Navigation/NavBar";
 import { FadeDownAnimation } from "../components/UI/Animations";
 const Contact = ({ showContact, setShowContact }) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   const inputItems = [
     {
       inputName: "firstName",
       title: "First Name",
       type: "text",
       placeholder: "Enter your First Name",
+      register: register,
+      errors: errors,
     },
     {
       inputName: "lastName",
       title: "Last Name",
       type: "text",
       placeholder: "Enter your Last Name",
+      register: register,
+      errors: errors,
     },
     {
       inputName: "email",
       title: "Email Address",
       type: "email",
       placeholder: "Enter your Email Address",
+      register: register,
+      errors: errors,
     },
   ];
   return (
@@ -54,9 +72,7 @@ const Contact = ({ showContact, setShowContact }) => {
         <div className="hidden lg:block h-40 w-40 rounded-full z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60  bg-[#1f0041] py-8 absolute top-24 right-12"></div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
+          onSubmit={handleSubmit(onSubmit)}
           className="w-full flex flex-col px-6 lg:px-24 py-12 lg:py-0 justify-start items-start gap-4 z-20"
         >
           <h3 className="text-white text-2xl text-center  font-heading z-20">
@@ -70,6 +86,8 @@ const Contact = ({ showContact, setShowContact }) => {
               title={item.title}
               placeholder={item.placeholder}
               type={item.type}
+              register={item.register}
+              errors={item.errors}
               py="4"
             />
           ))}
@@ -79,6 +97,8 @@ const Contact = ({ showContact, setShowContact }) => {
             placeholder="Enter a problem like: channel problem"
             type="text"
             py="4 pb-20"
+            register={register}
+            errors={errors}
           />
           <PrimaryButton
             bgColor="pry-50"

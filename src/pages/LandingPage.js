@@ -1,4 +1,8 @@
+import ContactPopOver from "./Contact";
 import { FooterButton, PrimaryButton } from "../components/UI/Buttons";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Clock } from "../components/Layout";
 import {
   FadeRightAnimation,
   FadeLeftAnimation,
@@ -13,10 +17,18 @@ import {
   Twitter,
   YouTube,
 } from "@mui/icons-material";
-import { useState } from "react";
-import ContactPopOver from "./Contact";
-import { Clock } from "../components/Layout";
 const LandingPage = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   const [showContact, setShowContact] = useState(false);
   return (
     <div className="bg-bgImage bg-cover flex px-8 lg:px-12 flex-col justify-center items-center  w-full">
@@ -50,20 +62,44 @@ const LandingPage = () => {
           <FadeLeftAnimation className="hidden lg:block h-20 w-20 rounded-full bg-gradient-to-t from-[#19073B] to-[#213F72]  py-8 absolute top-2/4 -right-32"></FadeLeftAnimation>
           <Clock />
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
+            onSubmit={handleSubmit(onSubmit)}
             className="w-full flex flex-col space-y-6 px-2 lg:px-8"
           >
             <div className="flex flex-col lg:flex-row justify-between gap-4  items-center lg:space-x-4 w-full">
-              <Input placeholder="First Name" />
-              <Input placeholder="Last Name" />
+              <Input
+                placeholder="First Name"
+                name="firstname"
+                id="firstname"
+                register={register}
+                errors={errors}
+              />
+              <Input
+                placeholder="Last Name"
+                name="lastname"
+                id="lastname"
+                register={register}
+                errors={errors}
+              />
             </div>
             <div className="w-full relative flex lg:flex-row flex-col lg:space-x-12 gap-4">
               <input
                 placeholder="Enter your email address"
+                name="email"
+                id="email"
+                type="email"
                 className="bg-white w-full pt placeholder:text-purple rounded-full text-purple  py-4 px-8 lg:pr-48 font-heading text-base  focus:outline-none  focus:border-purple transition focus:ring-purple focus:ring-1 duration-300"
+                {...register("email", {
+                  required: "Your email is required",
+                  minLength: {
+                    value: 4,
+                    message:
+                      "Your email address must be more than 4 characters",
+                  },
+                })}
               />
+              <p className="text-white ml-6 font-normal lg:hidden block text-sm font-body">
+                {errors["email"] && errors["email"]?.message}
+              </p>
               <PrimaryButton
                 bgColor="pry-50"
                 name="Join our waiting list"
@@ -78,6 +114,9 @@ const LandingPage = () => {
                 py="4 lg:hidden"
               />
             </div>
+            <p className="text-white font-normal ml-6 hidden lg:block text-sm font-body">
+              {errors["email"] && errors["email"]?.message}
+            </p>
           </form>
         </FadeUpAnimation>
       </main>

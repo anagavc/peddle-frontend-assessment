@@ -34,7 +34,7 @@ const Clock = () => {
   useEffect(() => {
     startTimer();
   });
-  console.log(timerDays);
+
   return (
     <div className="flex  justify-around lg:justify-between lg:space-x-2 flex-wrap lg:px-12 gap-8">
       <CountDownBox number={timerDays} text="Days" />
@@ -44,10 +44,5 @@ const Clock = () => {
     </div>
   );
 };
-Clock.defaultProps = {
-  timerDays: 10,
-  timerHours: 10,
-  timerMinutes: 10,
-  timerSeconds: 10,
-};
+
 export default Clock;
