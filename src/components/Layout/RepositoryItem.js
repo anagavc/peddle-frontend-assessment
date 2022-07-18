@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Paragraph } from "../UI/FontStyles";
-import { formatDate } from "../../utilities/formatDate";
+import { differenceInDays } from "date-fns";
+
 const RepositoryItem = ({ item }) => {
   return (
     <div
@@ -30,8 +31,8 @@ const RepositoryItem = ({ item }) => {
             </p>
           </div>
           <p className="text-base  text-white font-heading text-justify w-full">
-            Submitted {formatDate(item.pushed_at)} by{" "}
-            <span className="font-bold">{item.owner.login}</span>
+            Submitted {differenceInDays(new Date(), new Date(item.created_at))}{" "}
+            days ago by <span className="font-bold">{item.owner.login}</span>
           </p>
         </div>
       </div>

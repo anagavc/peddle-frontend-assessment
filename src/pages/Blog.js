@@ -78,7 +78,7 @@ const Blog = () => {
               {item.content}
             </p>
             <NavLink
-              to={`blog/${index}`}
+              to={`${index}`}
               className="flex space-x-2 w-full items-center  text-base uppercase text-[#FF00F7] hover:text-purple font-heading transition duration-300"
             >
               <span className="h-1 w-20 bg-[#FF00F7] hover:bg-purple transition duration-300"></span>
@@ -114,7 +114,7 @@ const Blog = () => {
                 {item.content}
               </p>
               <NavLink
-                to={`blog/${index}`}
+                to={`${index}`}
                 className="flex space-x-2 w-full items-center  text-base uppercase text-[#FF00F7] hover:text-purple font-heading transition duration-300"
               >
                 <span className="h-1 w-20 bg-[#FF00F7] hover:bg-purple transition duration-300"></span>

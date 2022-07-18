@@ -10,6 +10,16 @@ export const FooterButton = ({ icon, link }) => {
     </NavLink>
   );
 };
+export const ShareButton = ({ icon, link }) => {
+  return (
+    <NavLink
+      to={link}
+      className="text-white bg-gradient-to-t from-[#19073B] to-[#213F72] hover:text-pry-200 p-2 rounded transition duration-300"
+    >
+      {icon}
+    </NavLink>
+  );
+};
 export const PrimaryButton = ({
   path,
   name,

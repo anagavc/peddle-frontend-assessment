@@ -8,6 +8,7 @@ import {
   Terms,
   Privacy,
   Blog,
+  BlogItem,
 } from "./pages";
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="github" element={<Github />} />
+        <Route path="/blog/:id" element={<BlogItem />} />
+        <Route path="/github" element={<Github />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
       </Routes>
