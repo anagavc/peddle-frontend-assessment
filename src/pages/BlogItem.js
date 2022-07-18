@@ -59,7 +59,11 @@ const BlogItem = () => {
         <div className="flex gap-2 lg:space-x-4 justify-center items-center">
           <p className="text-base font-heading text-purple"> July 18,2022</p>
           <div className="flex space-x-2 items-center justify-center">
-            <img src={blogImage} className="rounded-full w-8 h-8" />
+            <img
+              src={blogImage}
+              className="rounded-full w-8 h-8"
+              alt="author"
+            />
             <p className="text-base font-heading text-purple"> by Paul</p>
           </div>
         </div>
