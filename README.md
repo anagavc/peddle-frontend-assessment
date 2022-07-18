@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Peddle-frontend-assessment task
+This is a coming soon landing page built using the React library for an afilliate tracking software solution company called Metricks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Libraries used
+- The styling was done using the Tailwind CSS library because of its low build size
+- The form validation for the contact section and the landing page's form was handled with the react-hook-form library
+- Animations across the pages was achieved with the Animate on Scroll library
+- The axios library was used to fetch the data from the github link and the infinite scroll for the data fetched was done using the react-infinite-scroll component
 
-## Available Scripts
 
-In the project directory, you can run:
+## Folder Structure
+- The components folder contains three folders which are the Layout, Navigation and UI folders and as their names imply, they handle every component that corresponds with their name
+- There is an images folder which contains the images used in the application
+- The pages folder contains all the respective pages that can be accessed in the application such as the Landing, About, Pivacy Policy and Terms pages
+- The utility folder contains the ScrollToTop component which enables users to be automatically scrolled back to the top when they navigate to the another page as React doesn't come shipped with such ability and it also contains the mock News items array used in the Blog page component
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API's used
+-The github search API used for fetching all the most starred repositiories from the past thirty days
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Steps on running the application
 
-### `npm test`
+- Make sure you have Node.js installed,open the client folder in your code editor and then proceed to execute this command in the terminal to install all the dependencies
+```bash
+  npm i
+```
+- Start the application after the dependencies have been installed by running 
+```bash
+  npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage/Examples
 
-### `npm run build`
+`A Landing page for an affiliate marketing solution`
+## Screenshots
+`The Landing Page`
+![landingpage](https://user-images.githubusercontent.com/84836053/179485551-7a82eeec-162d-4515-ba7f-4c9b2f877841.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Improvements
+- I will add a filter to list the top repositories based on the type of language used in the guthub page component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Demo
 
-### `npm run eject`
+`The link to the live website:`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://peddle-assessment.netlify.app/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
