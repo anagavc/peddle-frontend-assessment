@@ -6,10 +6,6 @@ import Footer from "../components/Layout/Footer";
 import { PrimaryButton } from "../components/UI/Buttons";
 import { ArrowForward, ThumbUpAlt, ThumbDownAlt } from "@mui/icons-material";
 import NavBarPurple from "../components/Navigation/NavBarPurple";
-import {
-  FadeUpAnimation,
-  FadeDownAnimation,
-} from "../components/UI/Animations";
 import { ShareButton } from "../components/UI/Buttons";
 import {
   Facebook,
@@ -52,12 +48,12 @@ const BlogItem = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-8  px-24  h-full w-full relative">
+      <div className="flex flex-col justify-center items-center gap-8 px-8  lg:px-24  h-full w-full relative">
         <div className="w- drop-shadow flex justify-center items-center h-full">
           <img
             src={blogImage}
             alt="item"
-            className="w-4/5 h-auto p-8 bg-white rounded"
+            className="w-full lg:w-4/5 h-auto p-4 lg:p-8 bg-white rounded"
           />
         </div>
         <div className="flex gap-2 lg:space-x-4 justify-center items-center">
@@ -90,7 +86,7 @@ const BlogItem = () => {
         <h6 className="text-purple text-xl font-heading font-medium">
           Table of contents:
         </h6>
-        <div className="flex space-x-6 w-full justify-between">
+        <div className="flex flex-col lg:flex-row gap-4 lg:space-x-6 w-full justify-between">
           <div className="flex-col  ">
             <li>
               <ul className="text-base font-heading text-purple ">
@@ -152,7 +148,7 @@ const BlogItem = () => {
             </li>
           </div>
         </div>
-        <div className="flex flex-col w-2/5 space-y-4 justify-center items-center">
+        <div className="flex flex-col w-full lg:w-2/5 space-y-4 justify-center items-center">
           <h6 className="text-purple text-lg font-heading font-medium">
             Share to social media
           </h6>
@@ -168,7 +164,7 @@ const BlogItem = () => {
           </div>
         </div>
         <div className="w-full relative flex justify-center items-center">
-          <div className="hidden lg:block h-20 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-8 right-8 z-10 "></div>
+          <div className="h-20 w-1/6  bg-gradient-to-t from-[#19073B] to-[#7F1E7B]  py-8 absolute top-8 right-8 z-10 "></div>
 
           <div className="flex  backdrop-filter backdrop-blur-xl bg-white justify-center items-center w-full  bg-opacity-20 space-x-2 z-20 py-24">
             <p className="text-base font-heading text-purple ">
@@ -184,10 +180,38 @@ const BlogItem = () => {
             </div>
           </div>
         </div>
+        <form className=" flex flex-col space-y-8 w-full lg:w-4/5 justify-center items-center">
+          <h6 className="text-purple text-lg font-heading font-medium">
+            Add a comment
+          </h6>
+          <p className="text-base font-heading text-purple text-center ">
+            Your email address will not be published. Required fields are
+            marked*
+          </p>
+          <input
+            placeholder="Name (required)"
+            id="name"
+            name="name"
+            className=" w-full placeholder:text-purple text-purple border-b border-b-purple py-4 px-4 font-heading text-base  focus:outline-none  focus:border-purple transition focus:ring-[#707070] focus:ring-1 duration-300"
+          />
+          <input
+            placeholder="Email (required)"
+            id="email"
+            name="email"
+            className=" w-full placeholder:text-purple text-purple border-b border-b-purple py-4 px-4 font-heading text-base  focus:outline-none  focus:border-purple transition focus:ring-[#707070] focus:ring-1 duration-300"
+          />
+          <input
+            placeholder="Comment (required)"
+            id="comment"
+            name="comment"
+            className="bg-[#1E232C] bg-opacity-10 w-full placeholder:text-purple text-purple  py-24 px-4 font-heading text-base  focus:outline-none  focus:border-purple transition focus:ring-[#707070] focus:ring-1 duration-300"
+          />
+          <PrimaryButton name="Submit" py="4" textColor="white" />
+        </form>
       </div>
 
-      <FadeUpAnimation className="w-full relative bg-gradient-to-t from-[#19073B] to-[#213F72] ">
-        <FadeDownAnimation className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-20 lg:right-48 z-10"></FadeDownAnimation>
+      <div className="w-full relative bg-gradient-to-t from-[#19073B] to-[#213F72] ">
+        <div className="block h-3/5 w-2/4 lg:w-80 bg-gradient-to-t from-[#1C0C28] to-[#7F4129]  py-8 absolute top-20 lg:right-48 z-10"></div>
         <div className="flex flex-col justify-around space-y-8  h-full px-8 lg:px-24 py-12 lg:py-24 backdrop-filter backdrop-blur-xl bg-[#7F1E7B]   bg-opacity-20   w-full z-20 relative">
           <h6 className="text-white text-2xl font-heading">
             Want to know more about Metrics ?
@@ -212,7 +236,7 @@ const BlogItem = () => {
             <ArrowForward />
           </NavLink>
         </div>
-      </FadeUpAnimation>
+      </div>
       <Footer />
     </div>
   );
